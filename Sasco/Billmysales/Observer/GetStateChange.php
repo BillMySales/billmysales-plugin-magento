@@ -33,8 +33,8 @@ class GetStateChange implements ObserverInterface
     * BILLMYSALES_WEBHOOK_TOKEN: Token que permite validar que los datos son enviados desde Magento,
     * este debe ser el mismo que se configuró en el origen de datos en la pasarela de facturación en BillMySales.
     */
-    const BILLMYSALES_WEBHOOK_URL = 'https://4b0136a6ab7ba3b2c020529a3aa159f9.m.pipedream.net';
-    const BILLMYSALES_WEBHOOK_TOKEN = '1234';
+    const BILLMYSALES_WEBHOOK_URL = '';
+    const BILLMYSALES_WEBHOOK_TOKEN = '';
 
     protected $logger;
 
