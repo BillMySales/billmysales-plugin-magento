@@ -12,7 +12,7 @@ El plugin fue probado con Magento 2.4.3-p1
 Instalar a partir de este código fuente
 ---------------------------------------
 
-1. Descargar el [código de este repositorio]().
+1. Descargar el [código de este repositorio](https://github.com/BillMySales/billmysales-plugin-magento/archive/refs/heads/main.zip).
 2. Descomprimir el archivo.
 3. Se debe copiar la carpeta `Sasco` en la siguiente ruta `magento/app/code/`
 4. Ejecutar el comando `magento setup:upgrade && magento cache:flush`
