@@ -145,7 +145,11 @@ expect "$(compose exec -T -u www-data magento bin/magento module:status BillMySa
 say "Uninstalling"
 compose cp "${ROOT}/tests/e2e/fixtures.php" magento:/var/www/magento/e2e-fixtures.php
 compose exec -T -u www-data magento php e2e-fixtures.php uninstall-module >> "${E2E}/stack.log" 2>&1
-compose exec -T -u www-data magento bin/magento module:disable BillMySales_Magento >> "${E2E}/stack.log" 2>&1
+# Wrapped in retry(): its own generated/code clear can hit the same startup
+# race as module:enable/setup:upgrade (found live, "Directory not empty");
+# a failed attempt changes nothing (the module is still enabled, config and
+# code still there), so retrying is safe.
+retry compose exec -T -u www-data magento bin/magento module:disable BillMySales_Magento >> "${E2E}/stack.log" 2>&1
 compose exec -T -u root magento rm -rf /var/www/magento/app/code/BillMySales/Magento
 {
     retry compose exec -T -u www-data magento bin/magento setup:upgrade
