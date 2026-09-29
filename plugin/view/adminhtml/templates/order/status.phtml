@@ -1,0 +1,34 @@
+<?php
+
+declare(strict_types=1);
+
+/**
+ * BillMySales for Magento.
+ *
+ * Copyright (c) 2026 BillMySales <https://www.billmysales.com>
+ * Licensed under the GNU General Public License v3.0 or later.
+ * See LICENSE file for more details.
+ */
+
+/**
+ * The order view page's "BillMySales" block: a "Send to BillMySales" link.
+ * Each delivery attempt's own outcome is a private note in the order's
+ * native "Notes History" tab instead (Webhook\Delivery), not here.
+ *
+ * @package BillMySales\Magento
+ * @var \BillMySales\Magento\Block\Adminhtml\Order\View\Status $block
+ * @var \Magento\Framework\Escaper                             $escaper
+ */
+?>
+<?php if ($block->canResend()): ?>
+    <div class="admin__page-section-item order-additional-info-billmysales">
+        <div class="admin__page-section-item-title">
+            <span><?= $escaper->escapeHtml(__('BillMySales')) ?></span>
+        </div>
+        <div class="admin__page-section-item-content">
+            <a class="action-default" href="<?= $escaper->escapeUrl($block->getResendUrl()) ?>">
+                <?= $escaper->escapeHtml(__('Send to BillMySales')) ?>
+            </a>
+        </div>
+    </div>
+<?php endif; ?>

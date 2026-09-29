@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<!--
+BillMySales for Magento.
+
+Copyright (c) 2026 BillMySales <https://www.billmysales.com>
+Licensed under the GNU General Public License v3.0 or later.
+See LICENSE file for more details.
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <!-- Global, not etc/frontend: the checkout's address step saves
+         through the webapi_rest area (Magento\Checkout\Model\
+         ShippingInformationManagement), not the frontend one. -->
+    <type name="Magento\Checkout\Model\ShippingInformationManagement">
+        <plugin name="BillMySales_Magento::saveCheckoutFields"
+                type="BillMySales\Magento\Plugin\Checkout\SaveCheckoutFieldsPlugin"/>
+    </type>
+</config>

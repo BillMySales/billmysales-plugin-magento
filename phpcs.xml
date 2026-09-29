@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<!--
+    Two layers: Adobe's own coding standard (magento/magento-coding-standard,
+    the "Magento2" ruleset: security, SQL, ObjectManager usage, Magento's own
+    conventions, also used by Mage-OS's own test suite), on plugin/ only
+    (tests/ isn't Magento-managed code, so its Magento-specific sniffs don't
+    apply there); and this project's own rule,
+    everywhere, for a docblock on every class, function (with its @param and
+    @return tags) and property, which PHP CS Fixer (the coding style,
+    php-cs-fixer.php) doesn't check. File docblocks are checked by
+    `make check-docs` (they go after declare(strict_types=1), where
+    Squiz.Commenting.FileComment doesn't look).
+-->
+<ruleset name="BillMySales Magento">
+    <file>plugin</file>
+    <file>tests</file>
+    <arg name="extensions" value="php"/>
+    <arg value="sp"/>
+    <arg name="colors"/>
+
+    <rule ref="Magento2">
+        <exclude-pattern>tests/*</exclude-pattern>
+    </rule>
+
+    <rule ref="Squiz.Commenting.ClassComment.Missing"/>
+    <rule ref="Squiz.Commenting.FunctionComment.Missing"/>
+    <rule ref="Squiz.Commenting.FunctionComment.MissingParamTag"/>
+    <rule ref="Squiz.Commenting.FunctionComment.MissingReturn"/>
+    <rule ref="Squiz.Commenting.VariableComment.Missing"/>
+</ruleset>

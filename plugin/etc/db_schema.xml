@@ -1,0 +1,52 @@
+<?xml version="1.0"?>
+<!--
+BillMySales for Magento.
+
+Copyright (c) 2026 BillMySales <https://www.billmysales.com>
+Licensed under the GNU General Public License v3.0 or later.
+See LICENSE file for more details.
+-->
+<schema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:Setup/Declaration/Schema/etc/schema.xsd">
+    <!-- One row per order with a delivery still pending (removed once it's
+         no longer pending: not a growing log). -->
+    <table name="billmysales_delivery_queue" resource="default" engine="innodb"
+           comment="BillMySales delivery queue">
+        <column xsi:type="int" name="id" unsigned="true" nullable="false" identity="true"
+                comment="Queue row id"/>
+        <column xsi:type="int" name="order_id" unsigned="true" nullable="false"
+                comment="Order id (entity_id)"/>
+        <column xsi:type="varchar" name="event" nullable="false" length="32" comment="Event"/>
+        <column xsi:type="varchar" name="delivery_id" nullable="false" length="36"
+                comment="Delivery UUID"/>
+        <column xsi:type="int" name="attempt" unsigned="true" nullable="false" default="0"
+                comment="Attempts made so far"/>
+        <column xsi:type="timestamp" name="next_attempt_at" on_update="false" nullable="false"
+                comment="Next attempt's date/time"/>
+        <column xsi:type="timestamp" name="created_at" on_update="false" nullable="false"
+                default="CURRENT_TIMESTAMP" comment="Created at"/>
+        <constraint xsi:type="primary" referenceId="PRIMARY">
+            <column name="id"/>
+        </constraint>
+        <index referenceId="BILLMYSALES_DELIVERY_QUEUE_NEXT_ATTEMPT_AT" indexType="btree">
+            <column name="next_attempt_at"/>
+        </index>
+    </table>
+
+    <!-- One row per admin-defined checkout field submitted with a quote,
+         keyed by the quote (not the order, which doesn't exist yet when
+         the checkout's address step saves it): the payload reads it by
+         the order's own quote_id. -->
+    <table name="billmysales_checkout_field_value" resource="default" engine="innodb"
+           comment="BillMySales checkout field values per quote">
+        <column xsi:type="int" name="quote_id" unsigned="true" nullable="false"
+                comment="Quote id"/>
+        <column xsi:type="varchar" name="field_key" nullable="false" length="64"
+                comment="Field key (etc/adminhtml/system.xml's checkout_fields definitions)"/>
+        <column xsi:type="text" name="value" nullable="false" comment="Submitted value"/>
+        <constraint xsi:type="primary" referenceId="PRIMARY">
+            <column name="quote_id"/>
+            <column name="field_key"/>
+        </constraint>
+    </table>
+</schema>

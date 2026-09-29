@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<!--
+BillMySales for Magento.
+
+Copyright (c) 2026 BillMySales <https://www.billmysales.com>
+Licensed under the GNU General Public License v3.0 or later.
+See LICENSE file for more details.
+-->
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <referenceContainer name="order_additional_info">
+            <block class="BillMySales\Magento\Block\Adminhtml\Order\View\Status"
+                   name="billmysales_order_status" template="BillMySales_Magento::order/status.phtml"/>
+        </referenceContainer>
+    </body>
+</page>

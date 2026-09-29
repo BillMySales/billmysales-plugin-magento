@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<!--
+BillMySales for Magento.
+
+Copyright (c) 2026 BillMySales <https://www.billmysales.com>
+Licensed under the GNU General Public License v3.0 or later.
+See LICENSE file for more details.
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:Event/etc/events.xsd">
+    <!-- Fired only after the order's database transaction actually commits
+         (unlike sales_order_save_after, which can fire inside a still-open
+         transaction): the reliable point to queue a delivery. -->
+    <event name="sales_order_save_commit_after">
+        <observer name="billmysales_order_save_commit_after"
+                  instance="BillMySales\Magento\Observer\QueueOnStatusChange"/>
+    </event>
+</config>

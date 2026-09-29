@@ -1,0 +1,50 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "type": "object",
+    "properties": {
+        "entity_id": {
+            "type": "integer"
+        },
+        "increment_id": {
+            "type": "string"
+        },
+        "status": {
+            "type": "string"
+        },
+        "state": {
+            "type": "string"
+        },
+        "grand_total": {
+            "type": "number"
+        },
+        "customer_email": {
+            "type": "string"
+        },
+        "created_at": {
+            "type": "string"
+        },
+        "items": {
+            "type": "array",
+            "minItems": 1
+        },
+        "billing_address": {
+            "type": "object"
+        },
+        "shipping_address": {
+            "type": [
+                "object",
+                "null"
+            ]
+        },
+        "checkout_fields": {
+            "type": "object"
+        }
+    },
+    "required": [
+        "entity_id",
+        "increment_id",
+        "status",
+        "grand_total",
+        "items"
+    ]
+}

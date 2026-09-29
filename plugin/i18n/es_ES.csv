@@ -1,0 +1,21 @@
+Label,Etiqueta
+"Values, comma-separated (empty: free text)","Valores, separados por coma (vacío: texto libre)"
+Required,Obligatorio
+"+ Add field","+ Agregar campo"
+Show,Mostrar
+"BillMySales: sending requested.","BillMySales: envío solicitado."
+BillMySales,BillMySales
+"Not sent yet.","Aún no enviada."
+"Send to BillMySales","Enviar a BillMySales"
+"BillMySales Section","Sección BillMySales"
+Settings,Configuración
+Active,Activo
+"Notification URL","URL de notificación"
+Secret,Secreto
+"Order statuses that notify","Estados del pedido que notifican"
+"Checkout fields","Campos del checkout"
+Fields,Campos
+"When off, no orders are sent; the settings are kept.","Cuando está desactivado, no se envían pedidos; la configuración se mantiene."
+"URL BillMySales gave you for this integration.","URL que BillMySales te dio para esta integración."
+"The secret shared with BillMySales, used to sign each notification.","El secreto compartido con BillMySales, usado para firmar cada notificación."
+"Added to the checkout's shipping address form and sent with the order.","Se agregan al formulario de dirección de envío del checkout y se envían con el pedido."

@@ -1,0 +1,65 @@
+{
+    "name": "billmysales/billmysales-plugin-magento",
+    "description": "BillMySales for Magento: sends orders to BillMySales.",
+    "type": "project",
+    "homepage": "https://www.billmysales.com",
+    "license": "GPL-3.0-or-later",
+    "authors": [
+        {
+            "name": "BillMySales",
+            "homepage": "https://www.billmysales.com"
+        }
+    ],
+    "support": {
+        "issues": "https://github.com/BillMySales/billmysales-plugin-magento/issues",
+        "source": "https://github.com/BillMySales/billmysales-plugin-magento"
+    },
+    "autoload": {
+        "psr-4": {
+            "BillMySales\\Magento\\": "plugin/"
+        },
+        "exclude-from-classmap": [
+            "plugin/registration.php"
+        ]
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "BillMySales\\TestsMagento\\": "tests/src/"
+        }
+    },
+    "require": {
+        "php": ">=8.4"
+    },
+    "require-dev": {
+        "ext-xdebug": "*",
+        "friendsofphp/php-cs-fixer": "^3.95",
+        "iodigital-com/phpstan-magento2-stubs": "^1.3",
+        "justinrainbow/json-schema": "^6.4",
+        "magento/magento-coding-standard": "^41.0",
+        "mockery/mockery": "^1.6",
+        "phpstan/extension-installer": "^1.4",
+        "phpstan/phpstan": "^2.1",
+        "phpstan/phpstan-mockery": "^2.0",
+        "phpunit/phpunit": "^12.4"
+    },
+    "scripts": {
+        "tests": "XDEBUG_MODE=coverage vendor/bin/phpunit --configuration=phpunit.xml",
+        "phpcs-fix": "vendor/bin/php-cs-fixer fix -v --config=php-cs-fixer.php",
+        "phpcs": "vendor/bin/php-cs-fixer fix -v --dry-run --diff --config=php-cs-fixer.php",
+        "phpcs-rules": "vendor/bin/phpcs --standard=phpcs.xml",
+        "phpstan": "vendor/bin/phpstan analyse --configuration=phpstan.neon --memory-limit=1G",
+        "phpstan-export": "vendor/bin/phpstan analyse --configuration=phpstan.neon --level 9 --generate-baseline"
+    },
+    "config": {
+        "platform": {
+            "php": "8.4.0"
+        },
+        "sort-packages": true,
+        "allow-plugins": {
+            "phpstan/extension-installer": true,
+            "dealerdirect/phpcodesniffer-composer-installer": true
+        }
+    },
+    "minimum-stability": "stable",
+    "prefer-stable": true
+}

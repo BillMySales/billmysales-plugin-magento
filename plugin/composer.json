@@ -1,0 +1,38 @@
+{
+    "name": "billmysales/billmysales-plugin-magento",
+    "description": "BillMySales for Magento: sends orders to BillMySales when they reach a selected status.",
+    "type": "magento2-module",
+    "version": "2.0.0",
+    "license": "GPL-3.0-or-later",
+    "homepage": "https://www.billmysales.com",
+    "authors": [
+        {
+            "name": "BillMySales",
+            "homepage": "https://www.billmysales.com"
+        }
+    ],
+    "support": {
+        "issues": "https://github.com/BillMySales/billmysales-plugin-magento/issues",
+        "source": "https://github.com/BillMySales/billmysales-plugin-magento"
+    },
+    "require": {
+        "php": ">=8.4",
+        "magento/framework": "*",
+        "magento/module-backend": "*",
+        "magento/module-checkout": "*",
+        "magento/module-config": "*",
+        "magento/module-cron": "*",
+        "magento/module-quote": "*",
+        "magento/module-sales": "*",
+        "magento/module-store": "*",
+        "magento/module-ui": "*"
+    },
+    "autoload": {
+        "files": [
+            "registration.php"
+        ],
+        "psr-4": {
+            "BillMySales\\Magento\\": ""
+        }
+    }
+}

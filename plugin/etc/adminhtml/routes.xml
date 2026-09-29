@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<!--
+BillMySales for Magento.
+
+Copyright (c) 2026 BillMySales <https://www.billmysales.com>
+Licensed under the GNU General Public License v3.0 or later.
+See LICENSE file for more details.
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/routes.xsd">
+    <router id="admin">
+        <route id="billmysales" frontName="billmysales">
+            <module name="BillMySales_Magento"/>
+        </route>
+    </router>
+</config>

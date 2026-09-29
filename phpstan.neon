@@ -1,0 +1,20 @@
+parameters:
+    # Review level, from basic (1) to very thorough (9).
+    level: 6
+    # Source code directories to be reviewed.
+    paths:
+        - plugin
+        - tests
+    # tests/fixtures has minimal Magento class doubles for the unit tests
+    # (mocked with Mockery); PHPStan uses the real stubs instead
+    # (iodigital-com/phpstan-magento2-stubs). tests/e2e/fixtures.php runs
+    # inside the real Magento stack (bin/magento's own bootstrap and
+    # framework classes), not in this repo's PHP environment.
+    excludePaths:
+        - tests/fixtures
+        - tests/e2e/fixtures.php
+    # The lowest PHP the plugin supports (also when run on a newer one).
+    phpVersion: 80400
+    # Composer's autoloader.
+    bootstrapFiles:
+        - tests/bootstrap.php

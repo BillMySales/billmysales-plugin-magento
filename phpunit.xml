@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+    PHPUnit 12 (the plugin's floor is PHP 8.4, matching Magento 2.4.9's
+    own requirement): the modern config, with #[CoversClass]/#[UsesClass]
+    attributes in the tests instead of the old @covers/@uses annotations.
+-->
+<phpunit
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation="vendor/phpunit/phpunit/phpunit.xsd"
+    bootstrap="tests/bootstrap.php"
+    cacheDirectory="var/cache/phpunit"
+    executionOrder="depends,defects"
+    colors="true"
+    beStrictAboutCoverageMetadata="true"
+    beStrictAboutOutputDuringTests="false"
+    beStrictAboutChangesToGlobalState="true"
+    failOnEmptyTestSuite="true"
+    failOnRisky="true"
+    failOnWarning="true"
+>
+    <testsuites>
+        <testsuite name="unit">
+            <directory>tests/src</directory>
+        </testsuite>
+    </testsuites>
+    <source>
+        <include>
+            <directory suffix=".php">plugin</directory>
+        </include>
+        <exclude>
+            <!-- A side-effect-only script (Magento's own component
+                 registration), not a class: nothing to unit-test. -->
+            <file>plugin/registration.php</file>
+        </exclude>
+    </source>
+    <coverage>
+        <report>
+            <text outputFile="var/tests-coverage.txt" showUncoveredFiles="true"/>
+            <clover outputFile="var/tests-coverage.xml"/>
+        </report>
+    </coverage>
+    <logging>
+        <testdoxText outputFile="var/tests-testdox.txt"/>
+    </logging>
+</phpunit>

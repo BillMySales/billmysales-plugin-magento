@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<!--
+BillMySales for Magento.
+
+Copyright (c) 2026 BillMySales <https://www.billmysales.com>
+Licensed under the GNU General Public License v3.0 or later.
+See LICENSE file for more details.
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:Api/etc/extension_attributes.xsd">
+    <!-- The admin-defined checkout fields, as one JSON-encoded object
+         (Plugin\Checkout\LayoutProcessorPlugin adds each field to the
+         shipping address form; view/frontend/web/js/collect-checkout-fields.js,
+         a payload-extender mixin, combines them here before the address is
+         saved). Declared on ShippingInformationInterface itself (not the
+         address): the same generic extension point
+         view/frontend/web/js/model/shipping-save-processor/payload-extender.js
+         exists for. -->
+    <extension_attributes for="Magento\Checkout\Api\Data\ShippingInformationInterface">
+        <attribute code="billmysales_checkout_fields" type="string"/>
+    </extension_attributes>
+</config>
