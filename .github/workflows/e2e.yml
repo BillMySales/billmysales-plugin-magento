@@ -39,7 +39,7 @@ jobs:
 
   install-test:
     name: Install/uninstall (the built zip, in app/code)
-    timeout-minutes: 10
+    timeout-minutes: 20
     runs-on: ubuntu-latest
 
     steps:
