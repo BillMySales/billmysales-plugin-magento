@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "3635a9bcb8c488fae4e099ec8825ad22",
+    "content-hash": "56dae647e67f337ac83fa3a7990f588c",
     "packages": [],
     "packages-dev": [
         {
@@ -837,16 +837,16 @@
         },
         {
             "name": "magento/magento-coding-standard",
-            "version": "41",
+            "version": "42",
             "source": {
                 "type": "git",
                 "url": "https://github.com/magento/magento-coding-standard.git",
-                "reference": "e4af7c6c79d0bfa89deb06cba1a3d49405635afc"
+                "reference": "6dfbeb6f1e3401329af2fc9b34448df38a124e58"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/magento/magento-coding-standard/zipball/e4af7c6c79d0bfa89deb06cba1a3d49405635afc",
-                "reference": "e4af7c6c79d0bfa89deb06cba1a3d49405635afc",
+                "url": "https://api.github.com/repos/magento/magento-coding-standard/zipball/6dfbeb6f1e3401329af2fc9b34448df38a124e58",
+                "reference": "6dfbeb6f1e3401329af2fc9b34448df38a124e58",
                 "shasum": ""
             },
             "require": {
@@ -854,10 +854,10 @@
                 "ext-simplexml": "*",
                 "magento/php-compatibility-fork": "^0.1",
                 "php": "~8.1.0 || ~8.2.0 || ~8.3.0 || ~8.4.0 || ~8.5.0",
-                "phpcsstandards/phpcsutils": "^1.2.2",
+                "phpcsstandards/phpcsutils": "^1.2.3",
                 "rector/rector": "^1.2.4 || ^2.0.0",
-                "squizlabs/php_codesniffer": "^3.10.2",
-                "webonyx/graphql-php": "^15.0"
+                "squizlabs/php_codesniffer": "^3.13.6",
+                "webonyx/graphql-php": "^15.33"
             },
             "require-dev": {
                 "phpunit/phpunit": "^9.6.20",
@@ -881,9 +881,9 @@
             "description": "A set of Magento specific PHP CodeSniffer rules.",
             "support": {
                 "issues": "https://github.com/magento/magento-coding-standard/issues",
-                "source": "https://github.com/magento/magento-coding-standard/tree/v41"
+                "source": "https://github.com/magento/magento-coding-standard/tree/v42"
             },
-            "time": "2026-08-18T06:05:59+00:00"
+            "time": "2026-11-18T06:36:09+00:00"
         },
         {
             "name": "magento/php-compatibility-fork",
@@ -1487,11 +1487,11 @@
         },
         {
             "name": "phpstan/phpstan",
-            "version": "2.2.16",
+            "version": "2.3.7",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phpstan/phpstan/zipball/46a6d9060e5a7763adfcc21ebcb8b504ebdbcb92",
-                "reference": "46a6d9060e5a7763adfcc21ebcb8b504ebdbcb92",
+                "url": "https://api.github.com/repos/phpstan/phpstan/zipball/90c91c2498849ab8cc4e873864bbf1cb2bf6ea12",
+                "reference": "90c91c2498849ab8cc4e873864bbf1cb2bf6ea12",
                 "shasum": ""
             },
             "require": {
@@ -1547,7 +1547,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2026-09-25T09:31:51+00:00"
+            "time": "2026-11-19T10:31:11+00:00"
         },
         {
             "name": "phpstan/phpstan-mockery",
@@ -2714,21 +2714,21 @@
         },
         {
             "name": "rector/rector",
-            "version": "2.6.7",
+            "version": "2.8.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/rectorphp/rector.git",
-                "reference": "f4aa224edb9b0630fb43826d4cb6a49b62e48d4c"
+                "reference": "bf2982e3e2b8dfbcb43e5589fa301431cb1e479e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/rectorphp/rector/zipball/f4aa224edb9b0630fb43826d4cb6a49b62e48d4c",
-                "reference": "f4aa224edb9b0630fb43826d4cb6a49b62e48d4c",
+                "url": "https://api.github.com/repos/rectorphp/rector/zipball/bf2982e3e2b8dfbcb43e5589fa301431cb1e479e",
+                "reference": "bf2982e3e2b8dfbcb43e5589fa301431cb1e479e",
                 "shasum": ""
             },
             "require": {
                 "php": "^7.4|^8.0",
-                "phpstan/phpstan": "^2.2.14"
+                "phpstan/phpstan": "^2.3.5"
             },
             "conflict": {
                 "rector/rector-doctrine": "*",
@@ -2759,7 +2759,7 @@
             ],
             "support": {
                 "issues": "https://github.com/rectorphp/rector/issues",
-                "source": "https://github.com/rectorphp/rector/tree/2.6.7"
+                "source": "https://github.com/rectorphp/rector/tree/2.8.5"
             },
             "funding": [
                 {
@@ -2767,7 +2767,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2026-09-13T20:17:44+00:00"
+            "time": "2026-11-14T23:24:35+00:00"
         },
         {
             "name": "sebastian/cli-parser",
@@ -5295,16 +5295,16 @@
         },
         {
             "name": "webonyx/graphql-php",
-            "version": "v15.37.2",
+            "version": "v15.39.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/webonyx/graphql-php.git",
-                "reference": "f2a5d802213eb231d17a21badbda22b01435f177"
+                "reference": "efa6b239d48f9ebe37ac0407d04a091b3685a869"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/webonyx/graphql-php/zipball/f2a5d802213eb231d17a21badbda22b01435f177",
-                "reference": "f2a5d802213eb231d17a21badbda22b01435f177",
+                "url": "https://api.github.com/repos/webonyx/graphql-php/zipball/efa6b239d48f9ebe37ac0407d04a091b3685a869",
+                "reference": "efa6b239d48f9ebe37ac0407d04a091b3685a869",
                 "shasum": ""
             },
             "require": {
@@ -5317,13 +5317,13 @@
                 "amphp/http-server": "^2.1 || ^3",
                 "dms/phpunit-arraysubset-asserts": "dev-master",
                 "ergebnis/composer-normalize": "^2.28",
-                "friendsofphp/php-cs-fixer": "3.95.18",
+                "friendsofphp/php-cs-fixer": "3.95.27",
                 "mll-lab/php-cs-fixer-config": "5.13.0",
                 "nyholm/psr7": "^1.5",
                 "phpbench/phpbench": "^1.2",
                 "phpstan/extension-installer": "^1.1",
-                "phpstan/phpstan": "2.2.8",
-                "phpstan/phpstan-phpunit": "2.0.18",
+                "phpstan/phpstan": "2.2.17",
+                "phpstan/phpstan-phpunit": "2.0.21",
                 "phpstan/phpstan-strict-rules": "2.0.12",
                 "phpunit/phpunit": "^9.5 || ^10.5.21 || ^11",
                 "psr/http-message": "^1 || ^2",
@@ -5359,7 +5359,7 @@
             ],
             "support": {
                 "issues": "https://github.com/webonyx/graphql-php/issues",
-                "source": "https://github.com/webonyx/graphql-php/tree/v15.37.2"
+                "source": "https://github.com/webonyx/graphql-php/tree/v15.39.0"
             },
             "funding": [
                 {
@@ -5371,7 +5371,7 @@
                     "type": "open_collective"
                 }
             ],
-            "time": "2026-08-14T06:29:42+00:00"
+            "time": "2026-10-25T16:45:38+00:00"
         }
     ],
     "aliases": [],
